@@ -1,0 +1,62 @@
+TITLE ion sorption on oil and chalk surfaces
+
+#SURFACE_MASTER_SPECIES
+#     Oil	OilOH
+#     Chalk	ChalkOH
+
+#SURFACE_SPECIES
+#     OilOH = OilOH
+#     log_k   0.0
+#     ChalkOH = ChalkOH
+#     log_k   0.0
+#     OilOH = OilO- + H+
+#     log_k   -3.98
+#     OilOH + Ca+2 = OilOCa+ + H+
+#     log_k   -2.20
+#     OilOH + Mg+2 = OilOMg+ + H+     
+#     log_k   -3.30
+#     ChalkOH + H+ = ChalkOH2+
+#     log_k   9.81
+#     ChalkOH2+ + SO4-2 = ChalkSO4- + H2O
+#     log_k   3.30
+#     ChalkOH2+ + OilO- = ChalkOH2OilO # this cannot be done in phreeqc, must be handles separately
+#     log_k   5.4
+#END
+
+SOLUTION 1 seawater
+     -units  mmol/kgw
+     pH      8.4
+     Ca     0.029
+     Mg     0.0008
+     Na     1.0
+     Cl     1.07
+     S      0.0
+     C(4)   0.009
+END
+
+SOLUTION 0 seawater with sulfate
+     -units  mmol/kgw
+     pH      8.4
+     Ca     0.029
+     Mg     0.0008
+     Na     1.0
+     Cl     1.07
+     S      0.05
+     C(4)   0.009
+END
+
+SURFACE 1 define the amount and composition of all surfaces
+     -sites_units density
+     #-equilibrate 1
+     Oil        1.0   10.0    1.0
+     Chalk      1.2   10.0    1.0
+#     -donnan # uncomment, and see the effect on Charge Balance...
+END
+
+
+SURFACE 2 define the amount and composition of all surfaces
+     #-equilibrate 0
+     Oil        5e-6    600.    0.1
+     Chalk       2e-4   600.    0.1
+#     -donnan # uncomment, and see the effect on Charge Balance...
+END

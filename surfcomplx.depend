@@ -1,0 +1,99 @@
+# depslib dependency file v1.0
+1459934963 source:/home/ehsan/Documents/cpptutorial/surfcomplx/main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<vector>
+	"PhreeqcRM.h"
+	"IPhreeqc.hpp"
+	"IPhreeqcPhast.h"
+
+1458129567 /usr/local/include/PhreeqcRM.h
+	"mpi.h"
+	"NameDouble.h"
+	<vector>
+	<list>
+	<set>
+	<map>
+	<string>
+	"IrmResult.h"
+
+1458129567 /usr/local/include/NameDouble.h
+	<cassert>
+	<map>
+	<string>
+	<list>
+	<vector>
+	"Parser.h"
+	"phrqtype.h"
+
+1458129567 /usr/local/include/Parser.h
+	<windows.h>
+	<string>
+	<map>
+	<vector>
+	<sstream>
+	<ostream>
+	<istream>
+	<cctype>
+	<algorithm>
+	<functional>
+	"PHRQ_base.h"
+	"Keywords.h"
+	"PHRQ_io.h"
+
+1458129567 /usr/local/include/PHRQ_base.h
+	<sstream>
+
+1458129567 /usr/local/include/Keywords.h
+	<string>
+	<map>
+
+1458129567 /usr/local/include/PHRQ_io.h
+	<iostream>
+	<exception>
+	<list>
+	"Keywords.h"
+	<time.h>
+
+1458129567 /usr/local/include/phrqtype.h
+
+1458129567 /usr/local/include/IrmResult.h
+
+1458129567 /usr/local/include/IPhreeqc.hpp
+	<exception>
+	<list>
+	<vector>
+	<map>
+	<cstdarg>
+	"IPhreeqcCallbacks.h"
+	"Var.h"
+	"PHRQ_io.h"
+
+1458129567 /usr/local/include/IPhreeqcCallbacks.h
+
+1458129567 /usr/local/include/Var.h
+	<ostream>
+
+1458129567 /usr/local/include/IPhreeqcPhast.h
+	"PHRQ_base.h"
+	"StorageBin.h"
+	<vector>
+	<list>
+	"IPhreeqc.hpp"
+
+1458129567 /usr/local/include/StorageBin.h
+	<cassert>
+	<map>
+	<string>
+	<list>
+	<vector>
+	"System.h"
+	"PHRQ_io.h"
+	"PHRQ_base.h"
+
+1458129567 /usr/local/include/System.h
+	"NameDouble.h"
+	"PHRQ_base.h"
+
