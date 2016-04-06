@@ -60,3 +60,6 @@ SURFACE 2 define the amount and composition of all surfaces
      Chalk       2e-4   600.    0.1
 #     -donnan # uncomment, and see the effect on Charge Balance...
 END
+
+SELECTED_OUTPUT
+     -molalities 

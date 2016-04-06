@@ -24,7 +24,7 @@ TITLE ion sorption on oil and chalk surfaces
 #END
 
 SOLUTION 1 seawater
-     #-units  mmol/kgw
+     -units  mmol/kgw
      pH      8.4
      Ca     0.029
      Mg     0.0008
