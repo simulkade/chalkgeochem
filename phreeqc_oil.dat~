@@ -1333,7 +1333,7 @@ EXCHANGE_SPECIES
 	-gamma	0.0	0
 
 SURFACE_MASTER_SPECIES
-        Oil	OilOH
+  Oil	OilOH
 	Chalk	ChalkOH
 	Hfo_s	Hfo_sOH
 	Hfo_w	Hfo_wOH
@@ -1364,8 +1364,8 @@ SURFACE_SPECIES
 	ChalkOH + H+ = ChalkOH2+
 	log_k   9.81
 
-	ChalkOH + SO4-2 + H+ = ChalkSO4- + H2O
-        log_k   32.373
+	ChalkOH2+ + SO4-2 = ChalkSO4- + H2O
+	log_k   3.30
 
 	Hfo_sOH = Hfo_sOH
 	-log_k	0

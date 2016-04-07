@@ -50,7 +50,8 @@ int main()
 //however, we can have fewer chemistry cells to save calculation time
     vector<int> grid2chem;
     grid2chem.resize(nxyz, -1);
-    for (int i=0; i<nxyz; i++){
+    for (int i=0; i<nxyz; i++)
+    {
         grid2chem[i]=i;
     }
     status= phreeqc_rm.CreateMapping(grid2chem);
@@ -114,7 +115,7 @@ int main()
 
 // working with species
     //status = phreeqc_rm.InitialPhreeqc2Module(ic1);
-
+    status = phreeqc_rm.SetSelectedOutputOn(true);
     status = phreeqc_rm.SetSpeciesSaveOn(true);
     ncomps = phreeqc_rm.FindComponents();
     int nspecies = phreeqc_rm.GetSpeciesCount();
@@ -131,4 +132,54 @@ int main()
         //phreeqc_rm.OutputMessage(strm.str());
         phreeqc_rm.ScreenMessage(strm.str()); // prints the message on the screen
     }
+
+// one issue is that the surface species are not among the species. we have to obtain
+//their values with getselectedoutput function. This is the way it works.
+    status = phreeqc_rm.SetCurrentSelectedOutputUserNumber(1); //SELECTED_OUTPUT user number
+    vector<double> so;
+    int col = phreeqc_rm.GetSelectedOutputColumnCount();
+    status = phreeqc_rm.GetSelectedOutput(so);
+    vector<string> headings;
+    headings.resize(col);
+    std::cerr << "     Selected output: " << "\n";
+    for (int j = 0; j < col; j++)
+    {
+      status = phreeqc_rm.GetSelectedOutputHeading(j, headings[j]);
+      std::cerr << "          " << j << " " << headings[j] << ": " << so[j] << "\n";
+    }
+
+// Now I'm going to plot the surface charge changes versus sulfate concentration
+    status = phreeqc_rm.SetSpeciesSaveOn(false);
+    double t=0;
+    int n_point=10;
+    vector<double> s_charge;
+    s_charge.resize(n_point, -1);
+    for (int i=0; i<n_point; i++)
+    {
+        t+=0.1;
+        phreeqc_rm.SetTime(t);
+        phreeqc_rm.SetTimeStep(0.0);
+        c[9]+=0.000005; // sulfur concentration
+        phreeqc_rm.SetConcentrations(c);
+        phreeqc_rm.RunCells();
+        status = phreeqc_rm.GetSelectedOutput(so);
+        s_charge[i]=so[0]/(so[0]+so[1]+so[2]); //sum of surface charge
+        cout << s_charge[i] << endl;
+//        for (int j = 0; j < col; j++)
+//        {
+//          status = phreeqc_rm.GetSelectedOutputHeading(j, headings[j]);
+//          std::cerr << "          " << j << " " << headings[j] << ": " << so[j] << "\n";
+//        }
+
+    }
+
+    for (int i = 0; i < ncomps; i++)
+    {
+        ostringstream strm;
+        strm.width(10);
+        strm << components[i] << "    " << c[i] << "\n";
+        //phreeqc_rm.OutputMessage(strm.str());
+        phreeqc_rm.ScreenMessage(strm.str()); // prints the message on the screen
+    }
+
 }

@@ -61,5 +61,8 @@ SURFACE 2 define the amount and composition of all surfaces
 #     -donnan # uncomment, and see the effect on Charge Balance...
 END
 
-SELECTED_OUTPUT
-     -molalities 
+SELECTED_OUTPUT 1
+     -file chalk.sel
+     -reset false
+     -molalities ChalkSO4- ChalkOH2+ ChalkOH OilO-
+END
