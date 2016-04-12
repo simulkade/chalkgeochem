@@ -11,6 +11,8 @@ using namespace std;
 
 int main()
 {
+// libphreeqcrm.so
+// libphreeqcrm.a
 // I have one cell, I want to change the sulphate concentration and obtain the surface charges
 // next step is to obtain the wettability
     int nxyz=1;
