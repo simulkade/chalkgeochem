@@ -16,8 +16,8 @@
 					<Add directory="../../../../../usr/local/include" />
 				</Compiler>
 				<Linker>
-					<Add library="../../../../../usr/local/lib/libphreeqcrm.so" />
-					<Add library="../../../../../usr/local/lib/libphreeqcrm.a" />
+					<Add library="../../../../usr/local/lib/libphreeqcrm.so" />
+					<Add library="../../../../usr/local/lib/libphreeqcrm.a" />
 					<Add library="gomp" />
 				</Linker>
 			</Target>

@@ -97,3 +97,13 @@
 	"NameDouble.h"
 	"PHRQ_base.h"
 
+1475310923 source:/home/ali/projects/chalkgeochem/main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<vector>
+	"PhreeqcRM.h"
+	"IPhreeqc.hpp"
+	"IPhreeqcPhast.h"
+
